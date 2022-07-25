@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:petology/widgets/default_form_field.dart';
+import 'package:petology/widgets/footer.dart';
 import 'package:petology/widgets/navigation_bar.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -13,7 +15,7 @@ class LoginScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              WebNavigationBar(),
+              const WebNavigationBar(),
               const SizedBox(
                 height: 400,
               ),
@@ -28,15 +30,27 @@ class LoginScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Login',
                         style: TextStyle(fontSize: 54),
                       ),
-                      const SizedBox(height: 55,),
-                      defaultFormFIeld(controller: emailController, label: 'email',keyboardType:TextInputType.emailAddress),
-                      const SizedBox(height: 41,),
-                      defaultFormFIeld(controller: passwordController,label: 'password',keyboardType:TextInputType.visiblePassword),
-                      const SizedBox(height: 88,),
+                      const SizedBox(
+                        height: 55,
+                      ),
+                      defaultFormFIeld(
+                          controller: emailController,
+                          label: 'email',
+                          keyboardType: TextInputType.emailAddress),
+                      const SizedBox(
+                        height: 41,
+                      ),
+                      defaultFormFIeld(
+                          controller: passwordController,
+                          label: 'password',
+                          keyboardType: TextInputType.visiblePassword),
+                      const SizedBox(
+                        height: 88,
+                      ),
                       MaterialButton(
                         onPressed: () {},
                         minWidth: 975.7,
@@ -44,10 +58,8 @@ class LoginScreen extends StatelessWidget {
                         color: Color(0xFF492F24),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(28),
-                            side: BorderSide(
-                                color: Color(0XFFFFE3C5),
-                                width: 2
-                            )),
+                            side:
+                                BorderSide(color: Color(0XFFFFE3C5), width: 2)),
                         child: Text(
                           'Sign up',
                           style: TextStyle(
@@ -56,37 +68,120 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 30,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end, children: [
-                          Text('Forget password?')
-                        ],
+                      const SizedBox(
+                        height: 30,
                       ),
-                      const SizedBox(height: 66,),
                       Row(
-                        mainAxisAlignment:MainAxisAlignment.spaceBetween ,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [Text('Forget password?')],
+                      ),
+                      const SizedBox(
+                        height: 66,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
                             width: 437.85,
                             height: 1,
                             color: Color(0xFF492F24),
                           ),
-                          Text('or',style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold
-                          ),),
+                          Text(
+                            'or',
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          ),
                           Container(
                             width: 437.85,
                             height: 1,
                             color: Color(0xFF492F24),
                           )
-
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
-              )
+              ),
+              const Footer(),
+              // Stack(
+              //   children: [
+              //     SvgPicture.asset('assets/images/footer.svg'),
+              //     Padding(
+              //       padding: const EdgeInsets.only(
+              //         right: 600,
+              //         left: 120,
+              //         top: 120,
+              //         bottom: 89,
+              //       ),
+              //       child: Row(
+              //         children: [
+              //           Column(
+              //             crossAxisAlignment: CrossAxisAlignment.start,
+              //             children: [
+              //               Text(
+              //                 'For Any Questions',
+              //                 style: TextStyle(
+              //                   fontSize: 48.5,
+              //                   color: Color(0xffFFE3C5),
+              //                 ),
+              //               ),
+              //               SizedBox(
+              //                 height: 60,
+              //               ),
+              //               Row(
+              //                 children: [
+              //                   Icon(
+              //                     Icons.email,
+              //                     size: 60,
+              //                     color: Color(0xffAE957B),
+              //                   ),
+              //                   SizedBox(
+              //                     width: 43,
+              //                   ),
+              //                   TextButton(
+              //                     onPressed: () {},
+              //                     child: Text(
+              //                       'Email@petology.com',
+              //                       style: TextStyle(
+              //                         fontSize: 38,
+              //                         color: Color(0xffAE957B),
+              //                       ),
+              //                     ),
+              //                   ),
+              //                 ],
+              //               ),
+              //               SizedBox(
+              //                 height: 60,
+              //               ),
+              //               Row(
+              //                 children: [
+              //                   Icon(
+              //                     Icons.phone,
+              //                     size: 60,
+              //                     color: Color(0xffAE957B),
+              //                   ),
+              //                   SizedBox(
+              //                     width: 43,
+              //                   ),
+              //                   TextButton(
+              //                     onPressed: () {},
+              //                     child: Text(
+              //                       '(+2) 0123456789',
+              //                       style: TextStyle(
+              //                         fontSize: 38,
+              //                         color: Color(0xffAE957B),
+              //                       ),
+              //                     ),
+              //                   ),
+              //                 ],
+              //               ),
+              //             ],
+              //           ),
+              //         ],
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),
@@ -95,69 +190,3 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class defaultFormFIeld extends StatelessWidget {
-  TextEditingController controller;
-  TextInputType keyboardType;
-  ValueChanged<String>? onSubmit;
-  ValueChanged<String>? onChange;
-  VoidCallback? onTap;
-  bool isPassword = false;
-  FormFieldValidator<String>? validate;
-  String? label;
-  IconData? prefix;
-  IconData? suffix;
-  VoidCallback? suffixPressed;
-  bool isClickable = true;
-
-   defaultFormFIeld({
-    Key? key,
-     required this.controller,
-    required this.keyboardType,
-    this.onSubmit,
-    this.onChange,
-    this. onTap,
-    bool isPassword = false,
-    this. validate,
-    required String label,
-    this. prefix,
-    this.suffix,
-    this. suffixPressed,
-    bool isClickable = true,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 975,
-      decoration: BoxDecoration(
-          color:Colors.white, borderRadius: BorderRadius.circular(41),
-      ),
-      child: TextFormField(
-        controller: controller,
-        keyboardType: keyboardType,
-        obscureText: isPassword,
-        enabled: isClickable,
-        onFieldSubmitted: onSubmit,
-        onChanged: onChange,
-        onTap: onTap,
-        validator: validate,
-        decoration: InputDecoration(
-          labelText: label,
-          labelStyle: const TextStyle(fontSize: 17),
-          // prefixIcon: Icon(
-          //   prefix,
-          // ),
-          suffixIcon: suffix != null
-              ? IconButton(
-                  onPressed: suffixPressed,
-                  icon: Icon(
-                    suffix,
-                  ),
-                )
-              : null,
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
-        ),
-      ),
-    );
-  }
-}
