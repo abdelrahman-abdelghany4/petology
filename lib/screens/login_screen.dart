@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:petology/widgets/default_form_field.dart';
 import 'package:petology/widgets/footer.dart';
 import 'package:petology/widgets/navigation_bar.dart';
@@ -19,89 +20,101 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 400,
               ),
-              Container(
-                height: 1211,
-                width: 1146,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.circular(88)),
-                child: Padding(
-                  padding: const EdgeInsets.all(82.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Login',
-                        style: TextStyle(fontSize: 54),
-                      ),
-                      const SizedBox(
-                        height: 55,
-                      ),
-                      defaultFormFIeld(
-                          controller: emailController,
-                          label: 'email',
-                          keyboardType: TextInputType.emailAddress),
-                      const SizedBox(
-                        height: 41,
-                      ),
-                      defaultFormFIeld(
-                          controller: passwordController,
-                          label: 'password',
-                          keyboardType: TextInputType.visiblePassword),
-                      const SizedBox(
-                        height: 88,
-                      ),
-                      MaterialButton(
-                        onPressed: () {},
-                        minWidth: 975.7,
-                        height: 134.85,
-                        color: Color(0xFF492F24),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(28),
-                            side:
-                                BorderSide(color: Color(0XFFFFE3C5), width: 2)),
-                        child: Text(
-                          'Sign up',
-                          style: TextStyle(
-                            color: Color(0xFFB6B6B6),
-                            fontSize: 30,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [Text('Forget password?')],
-                      ),
-                      const SizedBox(
-                        height: 66,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      bottom: 1530
+                    ),
+                    child: SvgPicture.asset('assets/images/dog.svg'),
+                  ),
+                  Container(
+                    height: 1211,
+                    width: 1146,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black),
+                        borderRadius: BorderRadius.circular(88)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(82.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
-                            width: 437.85,
-                            height: 1,
-                            color: Color(0xFF492F24),
+                          const Text(
+                            'Login',
+                            style: TextStyle(fontSize: 54),
                           ),
-                          Text(
-                            'or',
-                            style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.bold),
+                          const SizedBox(
+                            height: 55,
                           ),
-                          Container(
-                            width: 437.85,
-                            height: 1,
+                          defaultFormFIeld(
+                              controller: emailController,
+                              label: 'email',
+                              keyboardType: TextInputType.emailAddress),
+                          const SizedBox(
+                            height: 41,
+                          ),
+                          defaultFormFIeld(
+                              controller: passwordController,
+                              label: 'password',
+                              keyboardType: TextInputType.visiblePassword),
+                          const SizedBox(
+                            height: 88,
+                          ),
+                          MaterialButton(
+                            onPressed: () {},
+                            minWidth: 975.7,
+                            height: 134.85,
                             color: Color(0xFF492F24),
-                          )
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(28),
+                                side:
+                                BorderSide(color: Color(0XFFFFE3C5), width: 2)),
+                            child: Text(
+                              'Sign up',
+                              style: TextStyle(
+                                color: Color(0xFFB6B6B6),
+                                fontSize: 30,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [Text('Forget password?')],
+                          ),
+                          const SizedBox(
+                            height: 66,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: 437.85,
+                                height: 1,
+                                color: Color(0xFF492F24),
+                              ),
+                              Text(
+                                'or',
+                                style: TextStyle(
+                                    fontSize: 25, fontWeight: FontWeight.bold),
+                              ),
+                              Container(
+                                width: 437.85,
+                                height: 1,
+                                color: Color(0xFF492F24),
+                              )
+                            ],
+                          ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
+
               const Footer(),
               // Stack(
               //   children: [
