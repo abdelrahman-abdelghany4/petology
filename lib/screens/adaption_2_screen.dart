@@ -3,7 +3,7 @@ import 'package:petology/widgets/navigation_bar.dart';
 
 class Adaption2Screen extends StatelessWidget {
   const Adaption2Screen({Key? key}) : super(key: key);
-
+//ssssssss
   @override
   Widget build(BuildContext context) {
     return Scaffold(
