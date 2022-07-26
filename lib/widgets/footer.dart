@@ -27,29 +27,29 @@ class Footer extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'For Any Questions',
                   style: TextStyle(
                     fontSize: 47,
                     color: AppColors.lightBrown,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 60,
                 ),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.email,
                       size: 60,
                       color: AppColors.medBrown,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 43,
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Email@petology.com',
                         style: TextStyle(
                           fontSize: 36,
@@ -59,22 +59,22 @@ class Footer extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 60,
                 ),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.phone,
                       size: 60,
                       color: AppColors.medBrown,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 43,
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         '(+2) 0123456789',
                         style: TextStyle(
                           fontSize: 36,
@@ -86,35 +86,35 @@ class Footer extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               width: 115,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'We are waiting you',
                   style: TextStyle(
                     fontSize: 47,
                     color: AppColors.lightBrown,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 60,
                 ),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.location_on,
                       size: 60,
                       color: AppColors.medBrown,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 43,
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'First settlement/Cairo',
                         style: TextStyle(
                           fontSize: 36,
