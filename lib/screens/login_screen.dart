@@ -3,13 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:petology/cubits/login_cubit/login_cubit.dart';
 import 'package:petology/cubits/login_cubit/login_states.dart';
+import 'package:petology/screens/about_us.dart';
+import 'package:petology/shared/components.dart';
 import 'package:petology/themes/colors.dart';
 import 'package:petology/widgets/default_form_field.dart';
 import 'package:petology/widgets/footer.dart';
 import 'package:petology/widgets/navigation_bar.dart';
 
 class LoginScreen extends StatelessWidget {
-
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
 
@@ -20,7 +21,14 @@ class LoginScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => AppLoginCubit(),
       child: BlocConsumer<AppLoginCubit, AppLoginStates>(
-        listener: (context, state) {},
+        listener: (context, state) {
+          if (state is AppLoginSuccessState) {
+            navigateAndFinish(
+              widget: AboutUsScreen(),
+              context: context,
+            );
+          }
+        },
         builder: (context, state) {
           var cubit = AppLoginCubit.get(context);
           return Scaffold(
@@ -71,14 +79,16 @@ class LoginScreen extends StatelessWidget {
                                       controller: passwordController,
                                       label: 'password',
                                       keyboardType:
-                                      TextInputType.visiblePassword),
+                                          TextInputType.visiblePassword),
                                   const SizedBox(
                                     height: 88,
                                   ),
                                   MaterialButton(
                                     onPressed: () {
                                       cubit.userLogin(
-                                        email: emailController.text, password: passwordController.text,);
+                                        email: emailController.text,
+                                        password: passwordController.text,
+                                      );
                                     },
                                     minWidth: 975.7,
                                     height: 134.85,
@@ -108,7 +118,7 @@ class LoginScreen extends StatelessWidget {
                                   ),
                                   Row(
                                     mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Container(
                                         width: 437.85,
@@ -140,7 +150,7 @@ class LoginScreen extends StatelessWidget {
                                         color: const Color(0xFF2F4582),
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
-                                            BorderRadius.circular(44),
+                                                BorderRadius.circular(44),
                                             side: const BorderSide(
                                                 color: Color(0XFF707070),
                                                 width: 2)),
@@ -171,7 +181,7 @@ class LoginScreen extends StatelessWidget {
                                         color: Colors.white,
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
-                                            BorderRadius.circular(44),
+                                                BorderRadius.circular(44),
                                             side: const BorderSide(
                                                 color: Color(0XFF707070),
                                                 width: 2)),
