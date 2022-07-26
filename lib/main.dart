@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:petology/network/local/cache_helper.dart';
 import 'package:petology/network/remote/dio_helper.dart';
 import 'package:petology/screens/login_screen.dart';
+import 'package:petology/screens/signup_screen.dart';
 import 'package:petology/shared/block_observer.dart';
 
 void main() async {
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(),
+      home: SignupScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
