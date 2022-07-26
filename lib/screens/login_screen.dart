@@ -12,6 +12,7 @@ class LoginScreen extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -24,9 +25,7 @@ class LoginScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(
-                      bottom: 1530
-                    ),
+                    padding: const EdgeInsets.only(bottom: 1540),
                     child: SvgPicture.asset('assets/images/dog.svg'),
                   ),
                   Container(
@@ -68,8 +67,8 @@ class LoginScreen extends StatelessWidget {
                             color: Color(0xFF492F24),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(28),
-                                side:
-                                BorderSide(color: Color(0XFFFFE3C5), width: 2)),
+                                side: BorderSide(
+                                    color: Color(0XFFFFE3C5), width: 2)),
                             child: Text(
                               'Sign up',
                               style: TextStyle(
@@ -108,6 +107,93 @@ class LoginScreen extends StatelessWidget {
                               )
                             ],
                           ),
+                          const SizedBox(
+                            height: 97.3,
+                          ),
+                          Row(
+                            children: [
+                              MaterialButton(
+                                onPressed: () {},
+                                minWidth: 426.67,
+                                height: 104.19,
+                                color: Color(0xFF2F4582),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(44),
+                                    side: BorderSide(
+                                        color: Color(0XFF707070), width: 2)),
+                                child: Row(
+                                  children: [
+                                    SvgPicture.asset(
+                                        'assets/images/facebook.svg'),
+                                    const SizedBox(
+                                      width: 58,
+                                    ),
+                                    Text(
+                                      'Facebook',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 30,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 106.1,
+                              ),
+                              MaterialButton(
+                                onPressed: () {},
+                                minWidth: 426.67,
+                                height: 104.19,
+                                color: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(44),
+                                    side: BorderSide(
+                                        color: Color(0XFF707070), width: 2)),
+                                child: Row(
+                                  children: [
+                                    SvgPicture.asset(
+                                      'assets/images/google.svg',
+                                      width: 59.62,
+                                      height: 52.92,
+                                    ),
+                                    const SizedBox(
+                                      width: 58,
+                                    ),
+                                    Text(
+                                      'Google',
+                                      style: TextStyle(
+                                        color: Color(0xff180701),
+                                        fontSize: 30,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 55,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Didn\'t have an account?',
+                                style: TextStyle(
+                                    color: Color(0xFF492F24),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              TextButton(
+                                  onPressed: () {},
+                                  child: Text('sign up',
+                                      style: TextStyle(
+                                          color: Color(0xFF492F24),
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold)))
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -202,4 +288,3 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-

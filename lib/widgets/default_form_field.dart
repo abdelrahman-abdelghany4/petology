@@ -23,7 +23,7 @@ class defaultFormFIeld extends StatelessWidget {
     this.onTap,
     bool isPassword = false,
     this.validate,
-    required String label,
+    required this.label,
     this.prefix,
     this.suffix,
     this.suffixPressed,
@@ -61,7 +61,7 @@ class defaultFormFIeld extends StatelessWidget {
             ),
           )
               : null,
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(41.0)),
         ),
       ),
     );

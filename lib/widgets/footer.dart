@@ -19,7 +19,7 @@ class Footer extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(
             top: 80,
-            left: 65
+            left: 205
         ),
         child: Row(
           children: [
