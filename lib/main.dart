@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petology/screens/about_us.dart';
 import 'package:petology/screens/login_screen.dart';
 import 'package:petology/screens/signup_screen.dart';
 
@@ -16,9 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SignupScreen(),
+      home: AboutUsScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
-//////////
