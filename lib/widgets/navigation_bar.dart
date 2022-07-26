@@ -25,7 +25,7 @@ class WebNavigationBar extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'About us',
                 style: TextStyle(
                   color: AppColors.lightSilver,
@@ -35,7 +35,7 @@ class WebNavigationBar extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Categories',
                 style: TextStyle(
                   color: AppColors.lightSilver,
@@ -45,7 +45,7 @@ class WebNavigationBar extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Services',
                 style: TextStyle(
                   color: AppColors.lightSilver,
@@ -55,7 +55,7 @@ class WebNavigationBar extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Request',
                 style: TextStyle(
                   color: AppColors.lightSilver,
@@ -70,11 +70,11 @@ class WebNavigationBar extends StatelessWidget {
               color: AppColors.darkBrown,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(28),
-                  side: BorderSide(
+                  side: const BorderSide(
                     color: Color(0XFFFFE3C5),
                     width: 2
                   )),
-              child: Text(
+              child: const Text(
                 'Sign up',
                 style: TextStyle(
                   color: AppColors.darkSilver,
@@ -89,11 +89,11 @@ class WebNavigationBar extends StatelessWidget {
               color: Colors.white,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(28),
-                  side: BorderSide(
+                  side: const BorderSide(
                     color: AppColors.lightBrown,
                     width: 4
                   )),
-              child: Text(
+              child: const Text(
                 'Sign up',
                 style: TextStyle(
                   fontSize: 30,

@@ -7,8 +7,12 @@ import 'package:petology/widgets/navigation_bar.dart';
 
 class SignupScreen extends StatelessWidget {
   var formKey = GlobalKey<FormState>();
+  var firstNController = TextEditingController();
+  var lastNController = TextEditingController();
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
+  var rePasswordController = TextEditingController();
+  var countryController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -117,9 +121,9 @@ class SignupScreen extends StatelessWidget {
                                     Container(
                                       width: 437.85,
                                       height: 1,
-                                      color: Color(0xFF492F24),
+                                      color: const Color(0xFF492F24),
                                     ),
-                                    Text(
+                                    const Text(
                                       'or',
                                       style: TextStyle(
                                           fontSize: 25,
@@ -128,52 +132,131 @@ class SignupScreen extends StatelessWidget {
                                     Container(
                                       width: 437.85,
                                       height: 1,
-                                      color: Color(0xFF492F24),
+                                      color: const Color(0xFF492F24),
                                     )
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 47.7,
                                 ),
-                                defaultFormFIeld(
-                                    controller: emailController,
-                                    label: 'email',
-                                    keyboardType: TextInputType.emailAddress),
+                                PhysicalModel(
+                                  borderRadius: BorderRadius.circular(41),
+                                  color: Colors.white,
+                                  elevation: 12,
+                                  shadowColor: Colors.black,
+                                  clipBehavior:Clip.antiAlias,
+                                  child: defaultFormFIeld(
+                                      controller: firstNController,
+                                      label: 'First Name',
+                                      keyboardType: TextInputType.name,
+                                    validate: (String? value) {
+                                      if(value!.isEmpty){
+                                        return'name must not be empty';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                ),
                                 const SizedBox(
                                   height: 41,
                                 ),
-                                defaultFormFIeld(
-                                    controller: passwordController,
-                                    label: 'password',
-                                    keyboardType: TextInputType.visiblePassword),
+                                PhysicalModel(
+                                  borderRadius: BorderRadius.circular(41),
+                                  color: Colors.white,
+                                  elevation: 12,
+                                  shadowColor: Colors.black,
+                                  child: defaultFormFIeld(
+                                      controller: lastNController,
+                                      label: 'Last Name',
+                                      keyboardType: TextInputType.name,
+                                    validate: (String? value) {
+                                      if(value!.isEmpty){
+                                        return'name must not be empty';
+                                      }
+                                      return null;
+                                    },),
+                                ),
                                 const SizedBox(
                                   height: 41,
                                 ),
-                                defaultFormFIeld(
-                                    controller: emailController,
-                                    label: 'email',
-                                    keyboardType: TextInputType.emailAddress),
+                                PhysicalModel(
+                                  borderRadius: BorderRadius.circular(41),
+                                  color: Colors.white,
+                                  elevation: 12,
+                                  shadowColor: Colors.black,
+                                  child: defaultFormFIeld(
+                                      controller: emailController,
+                                      label: 'email',
+                                      keyboardType: TextInputType.emailAddress,
+                                    validate: (String? value) {
+                                      if(value!.isEmpty){
+                                        return'email must not be empty';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                ),
                                 const SizedBox(
                                   height: 41,
                                 ),
-                                defaultFormFIeld(
-                                    controller: passwordController,
-                                    label: 'password',
-                                    keyboardType: TextInputType.visiblePassword),
+                                PhysicalModel(
+                                  borderRadius: BorderRadius.circular(41),
+                                  color: Colors.white,
+                                  elevation: 12,
+                                  shadowColor: Colors.black,
+                                  child: defaultFormFIeld(
+                                      controller: passwordController,
+                                      label: 'password',
+                                      keyboardType: TextInputType.visiblePassword,
+                                    validate: (String? value) {
+                                      if(value!.isEmpty){
+                                        return'password must not be empty';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                ),
                                 const SizedBox(
                                   height: 41,
                                 ),
-                                defaultFormFIeld(
-                                    controller: emailController,
-                                    label: 'email',
-                                    keyboardType: TextInputType.emailAddress),
+                                PhysicalModel(
+                                  borderRadius: BorderRadius.circular(41),
+                                  color: Colors.white,
+                                  elevation: 12,
+                                  shadowColor: Colors.black,
+                                  child: defaultFormFIeld(
+                                      controller: rePasswordController,
+                                      label: 'Re-Enter password',
+                                      keyboardType: TextInputType.visiblePassword,
+                                    validate: (String? value) {
+                                      if(value!.isEmpty){
+                                        return'password must not be empty';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                ),
                                 const SizedBox(
                                   height: 41,
                                 ),
-                                defaultFormFIeld(
-                                    controller: passwordController,
-                                    label: 'password',
-                                    keyboardType: TextInputType.visiblePassword),
+                                PhysicalModel(
+                                  borderRadius: BorderRadius.circular(41),
+                                  color: Colors.white,
+                                  elevation: 12,
+                                  shadowColor: Colors.black,
+                                  child: defaultFormFIeld(
+                                      controller: countryController,
+                                      label: 'Country',
+                                      keyboardType: TextInputType.streetAddress,
+                                    validate: (String? value) {
+                                      if(value!.isEmpty){
+                                        return'Country must not be empty';
+                                      }
+                                      return null;
+                                    },
+
+                                  ),
+                                ),
                                 const SizedBox(
                                   height: 71,
                                 ),
@@ -181,12 +264,12 @@ class SignupScreen extends StatelessWidget {
                                   onPressed: () {},
                                   minWidth: 975.7,
                                   height: 134.85,
-                                  color: Color(0xFF492F24),
+                                  color: const Color(0xFF492F24),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(54),
-                                      side: BorderSide(
+                                      side: const BorderSide(
                                           color: Color(0XFFFFE3C5), width: 2)),
-                                  child: Text(
+                                  child: const Text(
                                     'Sign up',
                                     style: TextStyle(
                                       color: Color(0xFFB6B6B6),
@@ -194,11 +277,11 @@ class SignupScreen extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 25.3,),
+                                const SizedBox(height: 25.3,),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
+                                    const Text(
                                       'Already have an account?',
                                       style: TextStyle(
                                           color: Color(0xFF492F24),
@@ -207,7 +290,7 @@ class SignupScreen extends StatelessWidget {
                                     ),
                                     TextButton(
                                         onPressed: () {},
-                                        child: Text('Login',
+                                        child: const Text('Login',
                                             style: TextStyle(
                                                 color: Color(0xFF492F24),
                                                 fontSize: 20,
