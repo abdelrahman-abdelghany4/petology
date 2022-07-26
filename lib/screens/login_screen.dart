@@ -9,6 +9,7 @@ import 'package:petology/themes/colors.dart';
 import 'package:petology/widgets/default_form_field.dart';
 import 'package:petology/widgets/footer.dart';
 import 'package:petology/widgets/navigation_bar.dart';
+import 'dart:html' as html;
 
 class LoginScreen extends StatelessWidget {
   var emailController = TextEditingController();
@@ -94,12 +95,14 @@ class LoginScreen extends StatelessWidget {
                                     height: 134.85,
                                     color: AppColors.darkBrown,
                                     shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(28),
-                                        side: const BorderSide(
-                                            color: Color(0XFFFFE3C5),
-                                            width: 2)),
+                                      borderRadius: BorderRadius.circular(28),
+                                      side: const BorderSide(
+                                        color: Color(0XFFFFE3C5),
+                                        width: 2,
+                                      ),
+                                    ),
                                     child: const Text(
-                                      'Sign up',
+                                      'Login',
                                       style: TextStyle(
                                         color: AppColors.darkSilver,
                                         fontSize: 30,
@@ -111,7 +114,11 @@ class LoginScreen extends StatelessWidget {
                                   ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
-                                    children: const [Text('Forget password?')],
+                                    children: const [
+                                      Text(
+                                        'Forget password?',
+                                      )
+                                    ],
                                   ),
                                   const SizedBox(
                                     height: 66,
@@ -144,7 +151,12 @@ class LoginScreen extends StatelessWidget {
                                   Row(
                                     children: [
                                       MaterialButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          html.window.open(
+                                            'https://petology.orangedigitalcenteregypt.com/auth/oauth2/facebook',
+                                            "_blank",
+                                          );
+                                        },
                                         minWidth: 426.67,
                                         height: 104.19,
                                         color: const Color(0xFF2F4582),
@@ -157,7 +169,8 @@ class LoginScreen extends StatelessWidget {
                                         child: Row(
                                           children: [
                                             SvgPicture.asset(
-                                                'assets/images/facebook.svg'),
+                                              'assets/images/facebook.svg',
+                                            ),
                                             const SizedBox(
                                               width: 58,
                                             ),

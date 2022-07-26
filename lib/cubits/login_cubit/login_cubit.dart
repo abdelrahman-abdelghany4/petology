@@ -5,6 +5,7 @@ import 'package:petology/data/models/auth_model.dart';
 import 'package:petology/network/remote/dio_helper.dart';
 import 'package:petology/network/remote/end_points.dart';
 
+
 class AppLoginCubit extends Cubit<AppLoginStates> {
   AppLoginCubit() : super(AppLoginInitialState());
 
@@ -18,7 +19,6 @@ class AppLoginCubit extends Cubit<AppLoginStates> {
     required String password,
   }) {
     emit(AppLoginLoadingState());
-
     DioHelper.postData(
       url: LOGIN,
       data: {
@@ -28,6 +28,18 @@ class AppLoginCubit extends Cubit<AppLoginStates> {
     ).then((value) {
       authModel = AuthModel.fromJson(value.data);
       print(authModel!.accessToken);
+      emit(AppLoginSuccessState());
+    }).catchError((error) {
+      print('error is الالا = ${error.toString()}');
+      emit(AppLoginErrorState(error.toString()));
+    });
+  }
+
+  void loginWithFacebook() {
+    emit(AppLoginLoadingState());
+    DioHelper.getData(
+      url: FACEBOOK_LOGIN,
+    ).then((value) {
       emit(AppLoginSuccessState());
     }).catchError((error) {
       print('error is الالا = ${error.toString()}');
