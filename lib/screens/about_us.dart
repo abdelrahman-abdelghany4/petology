@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:petology/themes/colors.dart';
+import 'package:petology/widgets/footer.dart';
 import 'package:petology/widgets/navigation_bar.dart';
 
 class AboutUsScreen extends StatelessWidget {
@@ -146,7 +147,6 @@ class AboutUsScreen extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(
                             top: 168,
-
                           ),
                           child: Stack(
                             children: [
@@ -154,7 +154,9 @@ class AboutUsScreen extends StatelessWidget {
                                 height: 602,
                                 width: 644,
                                 child: Image(
-                                  image: AssetImage('assets/images/dog_leg.png',),
+                                  image: AssetImage(
+                                    'assets/images/dog_leg.png',
+                                  ),
                                 ),
                               ),
                               SizedBox(
@@ -179,7 +181,6 @@ class AboutUsScreen extends StatelessWidget {
                                   ],
                                 ),
                               ),
-
                             ],
                           ),
                         ),
@@ -187,14 +188,191 @@ class AboutUsScreen extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: 750,
+                    height: 1078,
                     width: double.infinity,
-                    child:Column(
+                    color: Color(0xFFF1F1F1),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 143),
+                      child: Column(
+                        children: [
+                          Stack(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 500),
+                                child:
+                                    Image.asset('assets/images/dog_leg_2.png'),
+                              ),
+                              Text(
+                                'Lets get this right ....',
+                                style: TextStyle(
+                                  fontSize: 74,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            'What kind of friend you looking for?',
+                            style: TextStyle(
+                              fontSize: 66,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 138,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              InkWell(
+                                child: Container(
+                                  height: 351,
+                                  width: 334,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(37),
+                                      border: Border.all(width: 2)),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Image.asset('assets/images/dog_icon.png'),
+                                      SizedBox(
+                                        height: 45,
+                                      ),
+                                      Text(
+                                        'Dogs',
+                                        style: TextStyle(
+                                          fontSize: 46,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                onHover: (value) {},
+                              ),
+                              SizedBox(
+                                width: 111,
+                              ),
+                              Container(
+                                height: 351,
+                                width: 334,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(37),
+                                    border: Border.all(width: 2)),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset('assets/images/cat_icon.png'),
+                                    SizedBox(
+                                      height: 45,
+                                    ),
+                                    Text(
+                                      'Cats',
+                                      style: TextStyle(
+                                        fontSize: 46,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    height: 1450,
+                    child: Column(
                       children: [
-
+                        Stack(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 500),
+                              child: Image.asset(
+                                'assets/images/dog_leg_2.png',
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 656,
+                              child: Text(
+                                'Our friends who looking for a house',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 69,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          width: 481,
+                          height: 760,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: AppColors.darkBrown,
+                              width: 4,
+                            ),
+                            borderRadius: BorderRadius.circular(88),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/caty.png',
+                                width: 380,
+                                height: 380,
+                              ),
+                              const Text(
+                                'Caty',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 50,
+                                  color: AppColors.darkBrown,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              MaterialButton(
+                                onPressed: () {},
+                                minWidth: 355,
+                                height: 109,
+                                child: Text(
+                                  'Read More',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                    color: AppColors.darkBrown,
+                                  ),
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(55),
+                                  side: BorderSide(
+                                    color: AppColors.lightBrown,
+                                    width: 8,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
                       ],
-                    ) ,
-                  )
+                    ),
+                  ),
+                  Container(
+                    width: 1920,
+                    height: 1482,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/screen.png'),
+                      ),
+                    ),
+                  ),
+                  const Footer(),
                 ],
               ),
             ),

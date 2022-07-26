@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:petology/screens/about_us.dart';
-import 'package:petology/screens/login_screen.dart';
-import 'package:petology/screens/signup_screen.dart';
+import 'package:petology/screens/adaption.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: AboutUsScreen(),
+      home: AdaptionScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
