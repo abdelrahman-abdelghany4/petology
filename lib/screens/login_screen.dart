@@ -69,9 +69,9 @@ class LoginScreen extends StatelessWidget {
                             color: AppColors.darkBrown,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(28),
-                                side: BorderSide(
+                                side: const BorderSide(
                                     color: Color(0XFFFFE3C5), width: 2)),
-                            child: Text(
+                            child: const Text(
                               'Sign up',
                               style: TextStyle(
                                 color: AppColors.darkSilver,
@@ -84,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
-                            children: [Text('Forget password?')],
+                            children: const [Text('Forget password?')],
                           ),
                           const SizedBox(
                             height: 66,
@@ -97,7 +97,7 @@ class LoginScreen extends StatelessWidget {
                                 height: 1,
                                 color: AppColors.darkBrown,
                               ),
-                              Text(
+                              const Text(
                                 'or',
                                 style: TextStyle(
                                     fontSize: 25, fontWeight: FontWeight.bold),
@@ -118,10 +118,10 @@ class LoginScreen extends StatelessWidget {
                                 onPressed: () {},
                                 minWidth: 426.67,
                                 height: 104.19,
-                                color: Color(0xFF2F4582),
+                                color: const Color(0xFF2F4582),
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(44),
-                                    side: BorderSide(
+                                    side: const BorderSide(
                                         color: Color(0XFF707070), width: 2)),
                                 child: Row(
                                   children: [
@@ -130,7 +130,7 @@ class LoginScreen extends StatelessWidget {
                                     const SizedBox(
                                       width: 58,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Facebook',
                                       style: TextStyle(
                                         color: Colors.white,
@@ -150,7 +150,7 @@ class LoginScreen extends StatelessWidget {
                                 color: Colors.white,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(44),
-                                    side: BorderSide(
+                                    side: const BorderSide(
                                         color: Color(0XFF707070), width: 2)),
                                 child: Row(
                                   children: [
@@ -162,7 +162,7 @@ class LoginScreen extends StatelessWidget {
                                     const SizedBox(
                                       width: 58,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Google',
                                       style: TextStyle(
                                         color: Color(0xff180701),
@@ -180,7 +180,7 @@ class LoginScreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
+                              const Text(
                                 'Didn\'t have an account?',
                                 style: TextStyle(
                                     color: Color(0xFF492F24),
@@ -189,7 +189,7 @@ class LoginScreen extends StatelessWidget {
                               ),
                               TextButton(
                                   onPressed: () {},
-                                  child: Text('sign up',
+                                  child: const Text('sign up',
                                       style: TextStyle(
                                           color: Color(0xFF492F24),
                                           fontSize: 20,

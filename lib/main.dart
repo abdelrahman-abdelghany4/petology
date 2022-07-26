@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:petology/screens/login_screen.dart';
-import 'package:petology/screens/signup_screen.dart';
+import 'package:petology/screens/adaption_2_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SignupScreen(),
+      home: const Adaption2Screen(),
       debugShowCheckedModeBanner: false,
     );
   }
