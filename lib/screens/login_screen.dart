@@ -152,10 +152,7 @@ class LoginScreen extends StatelessWidget {
                                     children: [
                                       MaterialButton(
                                         onPressed: () {
-                                          html.window.open(
-                                            'https://petology.orangedigitalcenteregypt.com/auth/oauth2/facebook',
-                                            "_blank",
-                                          );
+                                          cubit.loginWithFacebook();
                                         },
                                         minWidth: 426.67,
                                         height: 104.19,
