@@ -19,7 +19,6 @@ class SignupScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
-          //sssssss
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -28,7 +27,7 @@ class SignupScreen extends StatelessWidget {
                     SvgPicture.asset('assets/images/backk.svg'),
                     Column(
                       children: [
-                        const WebNavigationBar(),
+                        WebNavigationBar(),
                         const SizedBox(
                           height: 111.2,
                         ),
