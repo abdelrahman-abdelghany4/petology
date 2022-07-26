@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:petology/screens/about_us.dart';
-import 'package:petology/screens/adaption.dart';
+import 'package:petology/network/local/cache_helper.dart';
+import 'package:petology/network/remote/dio_helper.dart';
+import 'package:petology/screens/login_screen.dart';
 
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  DioHelper.init();
+  await CacheHelper.init();
+
+  String token = CacheHelper.getData(key: 'token') ?? '';
+
   runApp(const MyApp());
 }
 
@@ -17,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: AdaptionScreen(),
+      home: LoginScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
