@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:petology/themes/colors.dart';
 
 class WebNavigationBar extends StatelessWidget {
   const WebNavigationBar({
@@ -15,7 +16,7 @@ class WebNavigationBar extends StatelessWidget {
       ),
       child: Container(
         height: 142,
-        color: Color(0xFF492F24),
+        color: AppColors.darkBrown,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -27,7 +28,7 @@ class WebNavigationBar extends StatelessWidget {
               child: Text(
                 'About us',
                 style: TextStyle(
-                  color: Color(0xffC9C9C9),
+                  color: AppColors.lightSilver,
                   fontSize: 30,
                 ),
               ),
@@ -37,7 +38,7 @@ class WebNavigationBar extends StatelessWidget {
               child: Text(
                 'Categories',
                 style: TextStyle(
-                  color: Color(0xffC9C9C9),
+                  color: AppColors.lightSilver,
                   fontSize: 30,
                 ),
               ),
@@ -47,7 +48,7 @@ class WebNavigationBar extends StatelessWidget {
               child: Text(
                 'Services',
                 style: TextStyle(
-                  color: Color(0xffC9C9C9),
+                  color: AppColors.lightSilver,
                   fontSize: 30,
                 ),
               ),
@@ -57,7 +58,7 @@ class WebNavigationBar extends StatelessWidget {
               child: Text(
                 'Request',
                 style: TextStyle(
-                  color: Color(0xffC9C9C9),
+                  color: AppColors.lightSilver,
                   fontSize: 30,
                 ),
               ),
@@ -66,7 +67,7 @@ class WebNavigationBar extends StatelessWidget {
               onPressed: () {},
               minWidth: 208,
               height: 62,
-              color: Color(0xFF492F24),
+              color: AppColors.darkBrown,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(28),
                   side: BorderSide(
@@ -76,7 +77,7 @@ class WebNavigationBar extends StatelessWidget {
               child: Text(
                 'Sign up',
                 style: TextStyle(
-                  color: Color(0xFFB6B6B6),
+                  color: AppColors.darkSilver,
                   fontSize: 30,
                 ),
               ),
@@ -89,7 +90,7 @@ class WebNavigationBar extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(28),
                   side: BorderSide(
-                    color: Color(0xffFFE3C5),
+                    color: AppColors.lightBrown,
                     width: 4
                   )),
               child: Text(

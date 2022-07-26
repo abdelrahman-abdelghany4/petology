@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:petology/themes/colors.dart';
 import 'package:petology/widgets/default_form_field.dart';
 import 'package:petology/widgets/footer.dart';
 import 'package:petology/widgets/navigation_bar.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
+
   var formKey = GlobalKey<FormState>();
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
@@ -64,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                             onPressed: () {},
                             minWidth: 975.7,
                             height: 134.85,
-                            color: Color(0xFF492F24),
+                            color: AppColors.darkBrown,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(28),
                                 side: BorderSide(
@@ -72,7 +74,7 @@ class LoginScreen extends StatelessWidget {
                             child: Text(
                               'Sign up',
                               style: TextStyle(
-                                color: Color(0xFFB6B6B6),
+                                color: AppColors.darkSilver,
                                 fontSize: 30,
                               ),
                             ),
@@ -93,7 +95,7 @@ class LoginScreen extends StatelessWidget {
                               Container(
                                 width: 437.85,
                                 height: 1,
-                                color: Color(0xFF492F24),
+                                color: AppColors.darkBrown,
                               ),
                               Text(
                                 'or',
@@ -103,7 +105,7 @@ class LoginScreen extends StatelessWidget {
                               Container(
                                 width: 437.85,
                                 height: 1,
-                                color: Color(0xFF492F24),
+                                color: AppColors.darkBrown,
                               )
                             ],
                           ),

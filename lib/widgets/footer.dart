@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petology/themes/colors.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
@@ -30,7 +31,7 @@ class Footer extends StatelessWidget {
                   'For Any Questions',
                   style: TextStyle(
                     fontSize: 47,
-                    color: Color(0xffFFE3C5),
+                    color: AppColors.lightBrown,
                   ),
                 ),
                 SizedBox(
@@ -41,7 +42,7 @@ class Footer extends StatelessWidget {
                     Icon(
                       Icons.email,
                       size: 60,
-                      color: Color(0xffAE957B),
+                      color: AppColors.medBrown,
                     ),
                     SizedBox(
                       width: 43,
@@ -52,7 +53,7 @@ class Footer extends StatelessWidget {
                         'Email@petology.com',
                         style: TextStyle(
                           fontSize: 36,
-                          color: Color(0xffAE957B),
+                          color: AppColors.medBrown,
                         ),
                       ),
                     ),
@@ -66,7 +67,7 @@ class Footer extends StatelessWidget {
                     Icon(
                       Icons.phone,
                       size: 60,
-                      color: Color(0xffAE957B),
+                      color: AppColors.medBrown,
                     ),
                     SizedBox(
                       width: 43,
@@ -77,7 +78,7 @@ class Footer extends StatelessWidget {
                         '(+2) 0123456789',
                         style: TextStyle(
                           fontSize: 36,
-                          color: Color(0xffAE957B),
+                          color: AppColors.medBrown,
                         ),
                       ),
                     ),
@@ -95,7 +96,7 @@ class Footer extends StatelessWidget {
                   'We are waiting you',
                   style: TextStyle(
                     fontSize: 47,
-                    color: Color(0xffFFE3C5),
+                    color: AppColors.lightBrown,
                   ),
                 ),
                 SizedBox(
@@ -106,7 +107,7 @@ class Footer extends StatelessWidget {
                     Icon(
                       Icons.location_on,
                       size: 60,
-                      color: Color(0xffAE957B),
+                      color: AppColors.medBrown,
                     ),
                     SizedBox(
                       width: 43,
@@ -117,7 +118,7 @@ class Footer extends StatelessWidget {
                         'First settlement/Cairo',
                         style: TextStyle(
                           fontSize: 36,
-                          color: Color(0xffAE957B),
+                          color: AppColors.medBrown,
                         ),
                       ),
                     ),
@@ -131,18 +132,18 @@ class Footer extends StatelessWidget {
                     Icon(
                       Icons.location_on,
                       size: 60,
-                      color: Color(0xffAE957B),
+                      color: AppColors.medBrown,
                     ),
                     SizedBox(
                       width: 43,
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Cairo/Egypt',
                         style: TextStyle(
                           fontSize: 36,
-                          color: Color(0xffAE957B),
+                          color: AppColors.medBrown,
                         ),
                       ),
                     ),
