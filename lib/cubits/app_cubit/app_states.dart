@@ -4,15 +4,13 @@ class AppInitialState extends AppStates {}
 
 class AppLoadingState extends AppStates {}
 
-class AppSuccessState extends AppStates
-{
+class AppSuccessState extends AppStates {
   // final Model? loginModel;
   //
   // AppSuccessState(this.loginModel);
 }
 
-class AppErrorState extends AppStates
-{
+class AppErrorState extends AppStates {
   final String error;
 
   AppErrorState(this.error);
@@ -39,3 +37,23 @@ class AppResetPasswordErrorState extends AppStates {
 
   AppResetPasswordErrorState(this.error);
 }
+
+class ChangeCategoryState extends AppStates {}
+
+class ChangeYearState extends AppStates {}
+
+class ChangeMonthState extends AppStates {}
+
+class ChangeSizeState extends AppStates {}
+
+class ChangeBreedState extends AppStates {}
+
+class ChangeGenderState extends AppStates {}
+
+class ChangeHairLengthState extends AppStates {}
+
+class ChangeCareBehaviourState extends AppStates {}
+
+class ChangeHouseTraindState extends AppStates {}
+
+class ChangeColorState extends AppStates {}

@@ -18,11 +18,13 @@ class RequestScreen extends StatelessWidget {
 
   String? selectedCategory;
   List<String> categories = ['dog', 'cat'];
+  List<String> years = ['2011', '2012', '2013'];
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AppCubit, AppStates>(
       builder: (context, state) {
+        var cubit = AppCubit.get(context);
         return Scaffold(
           body: SafeArea(
             child: SingleChildScrollView(
@@ -113,20 +115,24 @@ class RequestScreen extends StatelessWidget {
                                         shadowColor: Colors.black,
                                         clipBehavior: Clip.antiAlias,
                                         child: Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 25.0),
                                           child: Row(
                                             children: [
                                               Text(
-                                                'Selected Value',
-                                                style: TextStyle(
+                                                cubit.year,
+                                                style: const TextStyle(
                                                   fontSize: 24,
                                                   fontWeight: FontWeight.bold,
                                                   color: AppColors.darkBrown,
                                                 ),
                                               ),
-                                              Spacer(),
+                                              const Spacer(),
                                               PopupMenuButton(
-                                                onSelected: (selectedValue) {
+                                                onSelected:
+                                                    (String selectedValue) {
+                                                  AppCubit.get(context)
+                                                      .selectYear(selectedValue);
                                                   // setState(() {
                                                   //   if (selectedValue == FilterOptions.favorites) {
                                                   //     _showOnlyFavorites = true;
@@ -140,7 +146,67 @@ class RequestScreen extends StatelessWidget {
                                                   size: 29,
                                                   color: AppColors.darkBrown,
                                                 ),
-                                                itemBuilder: (_) => categories.map((String val) {
+                                                itemBuilder: (_) => cubit.selectionModel!.ages
+                                                    .map((String val) {
+                                                  return PopupMenuItem(
+                                                    value: val,
+                                                    child: Text(
+                                                      val,
+                                                    ),
+                                                  );
+                                                }).toList(),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 116,
+                                    ),
+                                    SizedBox(
+                                      width: 429.65,
+                                      height: 115.53,
+                                      child: PhysicalModel(
+                                        borderRadius: BorderRadius.circular(41),
+                                        color: Colors.white,
+                                        elevation: 12,
+                                        shadowColor: Colors.black,
+                                        clipBehavior: Clip.antiAlias,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 25.0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                cubit.months,
+                                                style: const TextStyle(
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                              ),
+                                              const Spacer(),
+                                              PopupMenuButton(
+                                                onSelected:
+                                                    (String selectedValue) {
+                                                  AppCubit.get(context)
+                                                      .selectMonth(selectedValue);
+                                                  // setState(() {
+                                                  //   if (selectedValue == FilterOptions.favorites) {
+                                                  //     _showOnlyFavorites = true;
+                                                  //   } else {
+                                                  //     _showOnlyFavorites = false;
+                                                  //   }
+                                                  // });
+                                                },
+                                                icon: const Icon(
+                                                  Icons.keyboard_arrow_down,
+                                                  size: 29,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                                itemBuilder: (_) => cubit.selectionModel!.ages
+                                                    .map((String val) {
                                                   return PopupMenuItem(
                                                     value: val,
                                                     child: Text(
@@ -156,6 +222,483 @@ class RequestScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
+                                Row(
+                                  children: [
+                                  SizedBox(
+                                  width: 429.65,
+                                  height: 115.53,
+                                  child: PhysicalModel(
+                                    borderRadius: BorderRadius.circular(41),
+                                    color: Colors.white,
+                                    elevation: 12,
+                                    shadowColor: Colors.black,
+                                    clipBehavior: Clip.antiAlias,
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 25.0),
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            cubit.size,
+                                            style: const TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.bold,
+                                              color: AppColors.darkBrown,
+                                            ),
+                                          ),
+                                          const Spacer(),
+                                          PopupMenuButton(
+                                            onSelected:
+                                                (String selectedValue) {
+                                              AppCubit.get(context)
+                                                  .selectSize(selectedValue);
+                                              // setState(() {
+                                              //   if (selectedValue == FilterOptions.favorites) {
+                                              //     _showOnlyFavorites = true;
+                                              //   } else {
+                                              //     _showOnlyFavorites = false;
+                                              //   }
+                                              // });
+                                            },
+                                            icon: const Icon(
+                                              Icons.keyboard_arrow_down,
+                                              size: 29,
+                                              color: AppColors.darkBrown,
+                                            ),
+                                            itemBuilder: (_) => cubit.selectionModel!.size
+                                                .map((String val) {
+                                              return PopupMenuItem(
+                                                value: val,
+                                                child: Text(
+                                                  val,
+                                                ),
+                                              );
+                                            }).toList(),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                    SizedBox(
+                                      width: 116,
+                                    ),
+                                    SizedBox(
+                                      width: 429.65,
+                                      height: 115.53,
+                                      child: PhysicalModel(
+                                        borderRadius: BorderRadius.circular(41),
+                                        color: Colors.white,
+                                        elevation: 12,
+                                        shadowColor: Colors.black,
+                                        clipBehavior: Clip.antiAlias,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 25.0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                cubit.breed,
+                                                style: const TextStyle(
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                              ),
+                                              const Spacer(),
+                                              PopupMenuButton(
+                                                onSelected:
+                                                    (String selectedValue) {
+                                                  AppCubit.get(context)
+                                                      .selectBreed(selectedValue);
+                                                  // setState(() {
+                                                  //   if (selectedValue == FilterOptions.favorites) {
+                                                  //     _showOnlyFavorites = true;
+                                                  //   } else {
+                                                  //     _showOnlyFavorites = false;
+                                                  //   }
+                                                  // });
+                                                },
+                                                icon: const Icon(
+                                                  Icons.keyboard_arrow_down,
+                                                  size: 29,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                                itemBuilder: (_) => cubit.selectionModel!.breed
+                                                    .map((String val) {
+                                                  return PopupMenuItem(
+                                                    value: val,
+                                                    child: Text(
+                                                      val,
+                                                    ),
+                                                  );
+                                                }).toList(),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 429.65,
+                                      height: 115.53,
+                                      child: PhysicalModel(
+                                        borderRadius: BorderRadius.circular(41),
+                                        color: Colors.white,
+                                        elevation: 12,
+                                        shadowColor: Colors.black,
+                                        clipBehavior: Clip.antiAlias,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 25.0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                cubit.category,
+                                                style: const TextStyle(
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                              ),
+                                              const Spacer(),
+                                              PopupMenuButton(
+                                                onSelected:
+                                                    (String selectedValue) {
+                                                  AppCubit.get(context)
+                                                      .selectCategory(selectedValue);
+                                                  // setState(() {
+                                                  //   if (selectedValue == FilterOptions.favorites) {
+                                                  //     _showOnlyFavorites = true;
+                                                  //   } else {
+                                                  //     _showOnlyFavorites = false;
+                                                  //   }
+                                                  // });
+                                                },
+                                                icon: const Icon(
+                                                  Icons.keyboard_arrow_down,
+                                                  size: 29,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                                itemBuilder: (_) => categories
+                                                    .map((String val) {
+                                                  return PopupMenuItem(
+                                                    value: val,
+                                                    child: Text(
+                                                      val,
+                                                    ),
+                                                  );
+                                                }).toList(),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 116,
+                                    ),
+                                    SizedBox(
+                                      width: 429.65,
+                                      height: 115.53,
+                                      child: PhysicalModel(
+                                        borderRadius: BorderRadius.circular(41),
+                                        color: Colors.white,
+                                        elevation: 12,
+                                        shadowColor: Colors.black,
+                                        clipBehavior: Clip.antiAlias,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 25.0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                cubit.breed,
+                                                style: const TextStyle(
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                              ),
+                                              const Spacer(),
+                                              PopupMenuButton(
+                                                onSelected:
+                                                    (String selectedValue) {
+                                                  AppCubit.get(context)
+                                                      .selectBreed(selectedValue);
+                                                  // setState(() {
+                                                  //   if (selectedValue == FilterOptions.favorites) {
+                                                  //     _showOnlyFavorites = true;
+                                                  //   } else {
+                                                  //     _showOnlyFavorites = false;
+                                                  //   }
+                                                  // });
+                                                },
+                                                icon: const Icon(
+                                                  Icons.keyboard_arrow_down,
+                                                  size: 29,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                                itemBuilder: (_) => cubit.selectionModel!.breed
+                                                    .map((String val) {
+                                                  return PopupMenuItem(
+                                                    value: val,
+                                                    child: Text(
+                                                      val,
+                                                    ),
+                                                  );
+                                                }).toList(),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 429.65,
+                                      height: 115.53,
+                                      child: PhysicalModel(
+                                        borderRadius: BorderRadius.circular(41),
+                                        color: Colors.white,
+                                        elevation: 12,
+                                        shadowColor: Colors.black,
+                                        clipBehavior: Clip.antiAlias,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 25.0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                cubit.hairLength,
+                                                style: const TextStyle(
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                              ),
+                                              const Spacer(),
+                                              PopupMenuButton(
+                                                onSelected:
+                                                    (String selectedValue) {
+                                                  AppCubit.get(context)
+                                                      .selectHairLength(selectedValue);
+                                                  // setState(() {
+                                                  //   if (selectedValue == FilterOptions.favorites) {
+                                                  //     _showOnlyFavorites = true;
+                                                  //   } else {
+                                                  //     _showOnlyFavorites = false;
+                                                  //   }
+                                                  // });
+                                                },
+                                                icon: const Icon(
+                                                  Icons.keyboard_arrow_down,
+                                                  size: 29,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                                itemBuilder: (_) => cubit.selectionModel!.hairLength
+                                                    .map((String val) {
+                                                  return PopupMenuItem(
+                                                    value: val,
+                                                    child: Text(
+                                                      val,
+                                                    ),
+                                                  );
+                                                }).toList(),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 116,
+                                    ),
+                                    SizedBox(
+                                      width: 429.65,
+                                      height: 115.53,
+                                      child: PhysicalModel(
+                                        borderRadius: BorderRadius.circular(41),
+                                        color: Colors.white,
+                                        elevation: 12,
+                                        shadowColor: Colors.black,
+                                        clipBehavior: Clip.antiAlias,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 25.0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                cubit.careBehaviour,
+                                                style: const TextStyle(
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                              ),
+                                              const Spacer(),
+                                              PopupMenuButton(
+                                                onSelected:
+                                                    (String selectedValue) {
+                                                  AppCubit.get(context)
+                                                      .selectCareBehaviour(selectedValue);
+                                                  // setState(() {
+                                                  //   if (selectedValue == FilterOptions.favorites) {
+                                                  //     _showOnlyFavorites = true;
+                                                  //   } else {
+                                                  //     _showOnlyFavorites = false;
+                                                  //   }
+                                                  // });
+                                                },
+                                                icon: const Icon(
+                                                  Icons.keyboard_arrow_down,
+                                                  size: 29,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                                itemBuilder: (_) => cubit.selectionModel!.behaviour
+                                                    .map((String val) {
+                                                  return PopupMenuItem(
+                                                    value: val,
+                                                    child: Text(
+                                                      val,
+                                                    ),
+                                                  );
+                                                }).toList(),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 429.65,
+                                      height: 115.53,
+                                      child: PhysicalModel(
+                                        borderRadius: BorderRadius.circular(41),
+                                        color: Colors.white,
+                                        elevation: 12,
+                                        shadowColor: Colors.black,
+                                        clipBehavior: Clip.antiAlias,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 25.0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                cubit.houseTraind,
+                                                style: const TextStyle(
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                              ),
+                                              const Spacer(),
+                                              PopupMenuButton(
+                                                onSelected:
+                                                    (String selectedValue) {
+                                                  AppCubit.get(context)
+                                                      .selectHouseTraind(selectedValue);
+                                                  // setState(() {
+                                                  //   if (selectedValue == FilterOptions.favorites) {
+                                                  //     _showOnlyFavorites = true;
+                                                  //   } else {
+                                                  //     _showOnlyFavorites = false;
+                                                  //   }
+                                                  // });
+                                                },
+                                                icon: const Icon(
+                                                  Icons.keyboard_arrow_down,
+                                                  size: 29,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                                itemBuilder: (_) => cubit.selectionModel!.goodWith
+                                                    .map((String val) {
+                                                  return PopupMenuItem(
+                                                    value: val,
+                                                    child: Text(
+                                                      val,
+                                                    ),
+                                                  );
+                                                }).toList(),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 116,
+                                    ),
+                                    SizedBox(
+                                      width: 429.65,
+                                      height: 115.53,
+                                      child: PhysicalModel(
+                                        borderRadius: BorderRadius.circular(41),
+                                        color: Colors.white,
+                                        elevation: 12,
+                                        shadowColor: Colors.black,
+                                        clipBehavior: Clip.antiAlias,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 25.0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                cubit.color,
+                                                style: const TextStyle(
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                              ),
+                                              const Spacer(),
+                                              PopupMenuButton(
+                                                onSelected:
+                                                    (String selectedValue) {
+                                                  AppCubit.get(context)
+                                                      .selectColor(selectedValue);
+                                                  // setState(() {
+                                                  //   if (selectedValue == FilterOptions.favorites) {
+                                                  //     _showOnlyFavorites = true;
+                                                  //   } else {
+                                                  //     _showOnlyFavorites = false;
+                                                  //   }
+                                                  // });
+                                                },
+                                                icon: const Icon(
+                                                  Icons.keyboard_arrow_down,
+                                                  size: 29,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                                itemBuilder: (_) => cubit.selectionModel!.colors
+                                                    .map((String val) {
+                                                  return PopupMenuItem(
+                                                    value: val,
+                                                    child: Text(
+                                                      val,
+                                                    ),
+                                                  );
+                                                }).toList(),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
                               ],
                             ),
                           ),
@@ -172,32 +715,61 @@ class RequestScreen extends StatelessWidget {
       listener: (context, state) {},
     );
   }
-  Widget sha5a() => DropdownButtonFormField(
-    decoration: InputDecoration(
-      border: InputBorder.none,
-    ),
-    value: selectedCategory,
-    hint: Text(
-      'choose category',
-    ),
-    isExpanded: true,
-    onChanged: (value) {
-      // setState(() {
-      //   _selectedValue = value;
-      // });
-    },
-    onSaved: (value) {
-      // setState(() {
-      //   _selectedValue = value;
-      // });
-    },
-    items: categories.map((String val) {
-      return DropdownMenuItem(
-        value: val,
-        child: Text(
-          val,
+
+  Widget selection(context, String label, List<String> list) => SizedBox(
+    width: 429.65,
+    height: 115.53,
+    child: PhysicalModel(
+      borderRadius: BorderRadius.circular(41),
+      color: Colors.white,
+      elevation: 12,
+      shadowColor: Colors.black,
+      clipBehavior: Clip.antiAlias,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+            horizontal: 25.0),
+        child: Row(
+          children: [
+            Text(
+              label,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: AppColors.darkBrown,
+              ),
+            ),
+            const Spacer(),
+            PopupMenuButton(
+              onSelected:
+                  (String selectedValue) {
+                AppCubit.get(context)
+                    .selectColor(selectedValue);
+                // setState(() {
+                //   if (selectedValue == FilterOptions.favorites) {
+                //     _showOnlyFavorites = true;
+                //   } else {
+                //     _showOnlyFavorites = false;
+                //   }
+                // });
+              },
+              icon: const Icon(
+                Icons.keyboard_arrow_down,
+                size: 29,
+                color: AppColors.darkBrown,
+              ),
+              itemBuilder: (_) => list
+                  .map((String val) {
+                return PopupMenuItem(
+                  value: val,
+                  child: Text(
+                    val,
+                  ),
+                );
+              }).toList(),
+            ),
+          ],
         ),
-      );
-    }).toList(),
+      ),
+    ),
   );
 }
