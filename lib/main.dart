@@ -5,9 +5,9 @@ import 'package:petology/cubits/app_cubit/app_states.dart';
 import 'package:petology/network/local/cache_helper.dart';
 import 'package:petology/network/remote/dio_helper.dart';
 import 'package:petology/network/remote/end_points.dart';
-import 'package:petology/screens/about_us.dart';
+import 'package:petology/screens/adaption_2_screen.dart';
+import 'package:petology/screens/help_screen.dart';
 import 'package:petology/screens/login_screen.dart';
-import 'package:petology/screens/reqyest_screen.dart';
 import 'package:petology/screens/signup_screen.dart';
 import 'package:petology/shared/block_observer.dart';
 
@@ -16,13 +16,12 @@ void main() async {
   DioHelper.init();
   await CacheHelper.init();
 
-  token = CacheHelper.getData(key: 'token') ?? '';
+   token = CacheHelper.getData(key: 'token') ?? '';
 
-  Widget widget = token != '' ? AboutUsScreen() : LoginScreen();
   BlocOverrides.runZoned(
     () {
       runApp(
-        MyApp(startWidget: widget),
+        MyApp(),
       );
     },
     blocObserver: MyBlocObserver(),
@@ -30,12 +29,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  Widget? startWidget;
-
-   MyApp({
-    Key? key,
-    this.startWidget,
-  }) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +45,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            home: RequestScreen(),
+            home: HelpScreen(),
             debugShowCheckedModeBanner: false,
           );
         },
