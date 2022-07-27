@@ -17,7 +17,7 @@ class AdaptionScreen extends StatelessWidget {
               width: double.infinity,
             ),
             Column(
-              children:  [
+              children:  const [
                 WebNavigationBar(),
 
                 Footer(),

@@ -304,7 +304,8 @@ class SignupScreen extends StatelessWidget {
                                         onPressed: () {
                                           AppRegisterCubit.get(context)
                                               .userRegister(
-                                            email: emailController.text,
+                                            email:
+                                            emailController.text,
                                             password:
                                             passwordController.text,
                                             firstName:

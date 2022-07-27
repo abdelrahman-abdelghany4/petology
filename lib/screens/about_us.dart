@@ -55,7 +55,7 @@ class AboutUsScreen extends StatelessWidget {
                                           color: AppColors.lightSilver,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 49,
                                       ),
                                       MaterialButton(
@@ -143,14 +143,14 @@ class AboutUsScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Image.asset('assets/images/kalb_ota.png'),
-                        Spacer(),
+                        const Spacer(),
                         Padding(
                           padding: const EdgeInsets.only(
                             top: 168,
                           ),
                           child: Stack(
                             children: [
-                              Container(
+                              const SizedBox(
                                 height: 602,
                                 width: 644,
                                 child: Image(
@@ -163,7 +163,7 @@ class AboutUsScreen extends StatelessWidget {
                                 width: 749,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
+                                  children: const <Widget>[
                                     Text(
                                       'About Petology ',
                                       style: TextStyle(
@@ -202,7 +202,7 @@ class AboutUsScreen extends StatelessWidget {
                                 child:
                                     Image.asset('assets/images/dog_leg_2.png'),
                               ),
-                              Text(
+                              const Text(
                                 'Lets get this right ....',
                                 style: TextStyle(
                                   fontSize: 74,
@@ -211,14 +211,14 @@ class AboutUsScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Text(
+                          const Text(
                             'What kind of friend you looking for?',
                             style: TextStyle(
                               fontSize: 66,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 138,
                           ),
                           Row(
@@ -235,10 +235,10 @@ class AboutUsScreen extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Image.asset('assets/images/dog_icon.png'),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 45,
                                       ),
-                                      Text(
+                                      const Text(
                                         'Dogs',
                                         style: TextStyle(
                                           fontSize: 46,
@@ -250,7 +250,7 @@ class AboutUsScreen extends StatelessWidget {
                                 ),
                                 onHover: (value) {},
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 111,
                               ),
                               Container(
@@ -263,10 +263,10 @@ class AboutUsScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset('assets/images/cat_icon.png'),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 45,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Cats',
                                       style: TextStyle(
                                         fontSize: 46,
@@ -334,7 +334,7 @@ class AboutUsScreen extends StatelessWidget {
                                   color: AppColors.darkBrown,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 30,
                               ),
                               MaterialButton(
@@ -351,7 +351,7 @@ class AboutUsScreen extends StatelessWidget {
                                 ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(55),
-                                  side: BorderSide(
+                                  side: const BorderSide(
                                     color: AppColors.lightBrown,
                                     width: 8,
                                   ),
