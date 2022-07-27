@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -63,7 +62,7 @@ class RequestScreen extends StatelessWidget {
                                 PhysicalModel(
                                   borderRadius: BorderRadius.circular(41),
                                   color: Colors.white,
-                                  elevation: 12,
+                                  elevation: 5,
                                   shadowColor: Colors.black,
                                   clipBehavior: Clip.antiAlias,
                                   child: defaultFormFIeld(
@@ -78,35 +77,128 @@ class RequestScreen extends StatelessWidget {
                                     },
                                   ),
                                 ),
-                                DropdownButtonFormField(
-                                  decoration: InputDecoration(
-                                    helperText: 'fdfdfdf',
-                                  ),
-                                  value: selectedCategory,
-                                  hint: Text(
-                                    'choose category',
-                                  ),
-                                  isExpanded: true,
-                                  onChanged: (value) {
-                                    // setState(() {
-                                    //   _selectedValue = value;
-                                    // });
-                                  },
-                                  onSaved: (value) {
-                                    // setState(() {
-                                    //   _selectedValue = value;
-                                    // });
-                                  },
-                                  items: categories.map((String val) {
-                                    return DropdownMenuItem(
-                                      value: val,
-                                      child: Text(
-                                        val,
+                                SizedBox(
+                                  width: 975.7,
+                                  height: 115.53,
+                                  child: PhysicalModel(
+                                    borderRadius: BorderRadius.circular(41),
+                                    color: Colors.white,
+                                    elevation: 5,
+                                    shadowColor: Colors.black,
+                                    clipBehavior: Clip.antiAlias,
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 25.0,
                                       ),
-                                    );
-                                  }).toList(),
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            cubit.category,
+                                            style: const TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.bold,
+                                              color: AppColors.darkBrown,
+                                            ),
+                                          ),
+                                          const Spacer(),
+                                          PopupMenuButton(
+                                            onSelected: (String selectedValue) {
+                                              AppCubit.get(context)
+                                                  .selectCategory(
+                                                  selectedValue);
+                                              // setState(() {
+                                              //   if (selectedValue == FilterOptions.favorites) {
+                                              //     _showOnlyFavorites = true;
+                                              //   } else {
+                                              //     _showOnlyFavorites = false;
+                                              //   }
+                                              // });
+                                            },
+                                            icon: const Icon(
+                                              Icons.keyboard_arrow_down,
+                                              size: 29,
+                                              color: AppColors.darkBrown,
+                                            ),
+                                            itemBuilder: (_) =>
+                                                categories.map((String val) {
+                                                  return PopupMenuItem(
+                                                    value: val,
+                                                    child: Text(
+                                                      val,
+                                                    ),
+                                                  );
+                                                }).toList(),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 40,
+                                ),
+                                SizedBox(
+                                  width: 975.7,
+                                  height: 115.53,
+                                  child: PhysicalModel(
+                                    borderRadius: BorderRadius.circular(41),
+                                    color: Colors.white,
+                                    elevation: 5,
+                                    shadowColor: Colors.black,
+                                    clipBehavior: Clip.antiAlias,
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 25.0,
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            cubit.category,
+                                            style: const TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.bold,
+                                              color: AppColors.darkBrown,
+                                            ),
+                                          ),
+                                          const Spacer(),
+                                          PopupMenuButton(
+                                            onSelected: (String selectedValue) {
+                                              AppCubit.get(context)
+                                                  .selectCategory(
+                                                      selectedValue);
+                                              // setState(() {
+                                              //   if (selectedValue == FilterOptions.favorites) {
+                                              //     _showOnlyFavorites = true;
+                                              //   } else {
+                                              //     _showOnlyFavorites = false;
+                                              //   }
+                                              // });
+                                            },
+                                            icon: const Icon(
+                                              Icons.keyboard_arrow_down,
+                                              size: 29,
+                                              color: AppColors.darkBrown,
+                                            ),
+                                            itemBuilder: (_) =>
+                                                categories.map((String val) {
+                                              return PopupMenuItem(
+                                                value: val,
+                                                child: Text(
+                                                  val,
+                                                ),
+                                              );
+                                            }).toList(),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 40,
                                 ),
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     SizedBox(
                                       width: 429.65,
@@ -114,7 +206,7 @@ class RequestScreen extends StatelessWidget {
                                       child: PhysicalModel(
                                         borderRadius: BorderRadius.circular(41),
                                         color: Colors.white,
-                                        elevation: 12,
+                                        elevation: 5,
                                         shadowColor: Colors.black,
                                         clipBehavior: Clip.antiAlias,
                                         child: Padding(
@@ -135,7 +227,8 @@ class RequestScreen extends StatelessWidget {
                                                 onSelected:
                                                     (String selectedValue) {
                                                   AppCubit.get(context)
-                                                      .selectYear(selectedValue);
+                                                      .selectYear(
+                                                          selectedValue);
                                                   // setState(() {
                                                   //   if (selectedValue == FilterOptions.favorites) {
                                                   //     _showOnlyFavorites = true;
@@ -149,7 +242,8 @@ class RequestScreen extends StatelessWidget {
                                                   size: 29,
                                                   color: AppColors.darkBrown,
                                                 ),
-                                                itemBuilder: (_) => cubit.selectionModel!.ages
+                                                itemBuilder: (_) => cubit
+                                                    .selectionModel!.ages
                                                     .map((String val) {
                                                   return PopupMenuItem(
                                                     value: val,
@@ -173,7 +267,7 @@ class RequestScreen extends StatelessWidget {
                                       child: PhysicalModel(
                                         borderRadius: BorderRadius.circular(41),
                                         color: Colors.white,
-                                        elevation: 12,
+                                        elevation: 5,
                                         shadowColor: Colors.black,
                                         clipBehavior: Clip.antiAlias,
                                         child: Padding(
@@ -194,7 +288,8 @@ class RequestScreen extends StatelessWidget {
                                                 onSelected:
                                                     (String selectedValue) {
                                                   AppCubit.get(context)
-                                                      .selectMonth(selectedValue);
+                                                      .selectMonth(
+                                                          selectedValue);
                                                   // setState(() {
                                                   //   if (selectedValue == FilterOptions.favorites) {
                                                   //     _showOnlyFavorites = true;
@@ -208,7 +303,8 @@ class RequestScreen extends StatelessWidget {
                                                   size: 29,
                                                   color: AppColors.darkBrown,
                                                 ),
-                                                itemBuilder: (_) => cubit.selectionModel!.ages
+                                                itemBuilder: (_) => cubit
+                                                    .selectionModel!.ages
                                                     .map((String val) {
                                                   return PopupMenuItem(
                                                     value: val,
@@ -225,64 +321,70 @@ class RequestScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
+                                SizedBox(
+                                  height: 40,
+                                ),
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                  SizedBox(
-                                  width: 429.65,
-                                  height: 115.53,
-                                  child: PhysicalModel(
-                                    borderRadius: BorderRadius.circular(41),
-                                    color: Colors.white,
-                                    elevation: 12,
-                                    shadowColor: Colors.black,
-                                    clipBehavior: Clip.antiAlias,
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 25.0),
-                                      child: Row(
-                                        children: [
-                                          Text(
-                                            cubit.size,
-                                            style: const TextStyle(
-                                              fontSize: 24,
-                                              fontWeight: FontWeight.bold,
-                                              color: AppColors.darkBrown,
-                                            ),
-                                          ),
-                                          const Spacer(),
-                                          PopupMenuButton(
-                                            onSelected:
-                                                (String selectedValue) {
-                                              AppCubit.get(context)
-                                                  .selectSize(selectedValue);
-                                              // setState(() {
-                                              //   if (selectedValue == FilterOptions.favorites) {
-                                              //     _showOnlyFavorites = true;
-                                              //   } else {
-                                              //     _showOnlyFavorites = false;
-                                              //   }
-                                              // });
-                                            },
-                                            icon: const Icon(
-                                              Icons.keyboard_arrow_down,
-                                              size: 29,
-                                              color: AppColors.darkBrown,
-                                            ),
-                                            itemBuilder: (_) => cubit.selectionModel!.size
-                                                .map((String val) {
-                                              return PopupMenuItem(
-                                                value: val,
-                                                child: Text(
-                                                  val,
+                                    SizedBox(
+                                      width: 429.65,
+                                      height: 115.53,
+                                      child: PhysicalModel(
+                                        borderRadius: BorderRadius.circular(41),
+                                        color: Colors.white,
+                                        elevation: 5,
+                                        shadowColor: Colors.black,
+                                        clipBehavior: Clip.antiAlias,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 25.0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                cubit.size,
+                                                style: const TextStyle(
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: AppColors.darkBrown,
                                                 ),
-                                              );
-                                            }).toList(),
+                                              ),
+                                              const Spacer(),
+                                              PopupMenuButton(
+                                                onSelected:
+                                                    (String selectedValue) {
+                                                  AppCubit.get(context)
+                                                      .selectSize(
+                                                          selectedValue);
+                                                  // setState(() {
+                                                  //   if (selectedValue == FilterOptions.favorites) {
+                                                  //     _showOnlyFavorites = true;
+                                                  //   } else {
+                                                  //     _showOnlyFavorites = false;
+                                                  //   }
+                                                  // });
+                                                },
+                                                icon: const Icon(
+                                                  Icons.keyboard_arrow_down,
+                                                  size: 29,
+                                                  color: AppColors.darkBrown,
+                                                ),
+                                                itemBuilder: (_) => cubit
+                                                    .selectionModel!.size
+                                                    .map((String val) {
+                                                  return PopupMenuItem(
+                                                    value: val,
+                                                    child: Text(
+                                                      val,
+                                                    ),
+                                                  );
+                                                }).toList(),
+                                              ),
+                                            ],
                                           ),
-                                        ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ),
                                     SizedBox(
                                       width: 116,
                                     ),
@@ -292,7 +394,7 @@ class RequestScreen extends StatelessWidget {
                                       child: PhysicalModel(
                                         borderRadius: BorderRadius.circular(41),
                                         color: Colors.white,
-                                        elevation: 12,
+                                        elevation: 5,
                                         shadowColor: Colors.black,
                                         clipBehavior: Clip.antiAlias,
                                         child: Padding(
@@ -313,7 +415,8 @@ class RequestScreen extends StatelessWidget {
                                                 onSelected:
                                                     (String selectedValue) {
                                                   AppCubit.get(context)
-                                                      .selectBreed(selectedValue);
+                                                      .selectBreed(
+                                                          selectedValue);
                                                   // setState(() {
                                                   //   if (selectedValue == FilterOptions.favorites) {
                                                   //     _showOnlyFavorites = true;
@@ -327,7 +430,8 @@ class RequestScreen extends StatelessWidget {
                                                   size: 29,
                                                   color: AppColors.darkBrown,
                                                 ),
-                                                itemBuilder: (_) => cubit.selectionModel!.breed
+                                                itemBuilder: (_) => cubit
+                                                    .selectionModel!.breed
                                                     .map((String val) {
                                                   return PopupMenuItem(
                                                     value: val,
@@ -344,7 +448,11 @@ class RequestScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
+                                SizedBox(
+                                  height: 40,
+                                ),
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     SizedBox(
                                       width: 429.65,
@@ -352,7 +460,7 @@ class RequestScreen extends StatelessWidget {
                                       child: PhysicalModel(
                                         borderRadius: BorderRadius.circular(41),
                                         color: Colors.white,
-                                        elevation: 12,
+                                        elevation: 5,
                                         shadowColor: Colors.black,
                                         clipBehavior: Clip.antiAlias,
                                         child: Padding(
@@ -373,7 +481,8 @@ class RequestScreen extends StatelessWidget {
                                                 onSelected:
                                                     (String selectedValue) {
                                                   AppCubit.get(context)
-                                                      .selectCategory(selectedValue);
+                                                      .selectCategory(
+                                                          selectedValue);
                                                   // setState(() {
                                                   //   if (selectedValue == FilterOptions.favorites) {
                                                   //     _showOnlyFavorites = true;
@@ -411,7 +520,7 @@ class RequestScreen extends StatelessWidget {
                                       child: PhysicalModel(
                                         borderRadius: BorderRadius.circular(41),
                                         color: Colors.white,
-                                        elevation: 12,
+                                        elevation: 5,
                                         shadowColor: Colors.black,
                                         clipBehavior: Clip.antiAlias,
                                         child: Padding(
@@ -432,7 +541,8 @@ class RequestScreen extends StatelessWidget {
                                                 onSelected:
                                                     (String selectedValue) {
                                                   AppCubit.get(context)
-                                                      .selectBreed(selectedValue);
+                                                      .selectBreed(
+                                                          selectedValue);
                                                   // setState(() {
                                                   //   if (selectedValue == FilterOptions.favorites) {
                                                   //     _showOnlyFavorites = true;
@@ -446,7 +556,8 @@ class RequestScreen extends StatelessWidget {
                                                   size: 29,
                                                   color: AppColors.darkBrown,
                                                 ),
-                                                itemBuilder: (_) => cubit.selectionModel!.breed
+                                                itemBuilder: (_) => cubit
+                                                    .selectionModel!.breed
                                                     .map((String val) {
                                                   return PopupMenuItem(
                                                     value: val,
@@ -463,7 +574,11 @@ class RequestScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
+                                SizedBox(
+                                  height: 40,
+                                ),
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     SizedBox(
                                       width: 429.65,
@@ -471,7 +586,7 @@ class RequestScreen extends StatelessWidget {
                                       child: PhysicalModel(
                                         borderRadius: BorderRadius.circular(41),
                                         color: Colors.white,
-                                        elevation: 12,
+                                        elevation: 5,
                                         shadowColor: Colors.black,
                                         clipBehavior: Clip.antiAlias,
                                         child: Padding(
@@ -492,7 +607,8 @@ class RequestScreen extends StatelessWidget {
                                                 onSelected:
                                                     (String selectedValue) {
                                                   AppCubit.get(context)
-                                                      .selectHairLength(selectedValue);
+                                                      .selectHairLength(
+                                                          selectedValue);
                                                   // setState(() {
                                                   //   if (selectedValue == FilterOptions.favorites) {
                                                   //     _showOnlyFavorites = true;
@@ -506,7 +622,8 @@ class RequestScreen extends StatelessWidget {
                                                   size: 29,
                                                   color: AppColors.darkBrown,
                                                 ),
-                                                itemBuilder: (_) => cubit.selectionModel!.hairLength
+                                                itemBuilder: (_) => cubit
+                                                    .selectionModel!.hairLength
                                                     .map((String val) {
                                                   return PopupMenuItem(
                                                     value: val,
@@ -530,7 +647,7 @@ class RequestScreen extends StatelessWidget {
                                       child: PhysicalModel(
                                         borderRadius: BorderRadius.circular(41),
                                         color: Colors.white,
-                                        elevation: 12,
+                                        elevation: 5,
                                         shadowColor: Colors.black,
                                         clipBehavior: Clip.antiAlias,
                                         child: Padding(
@@ -551,7 +668,8 @@ class RequestScreen extends StatelessWidget {
                                                 onSelected:
                                                     (String selectedValue) {
                                                   AppCubit.get(context)
-                                                      .selectCareBehaviour(selectedValue);
+                                                      .selectCareBehaviour(
+                                                          selectedValue);
                                                   // setState(() {
                                                   //   if (selectedValue == FilterOptions.favorites) {
                                                   //     _showOnlyFavorites = true;
@@ -565,7 +683,8 @@ class RequestScreen extends StatelessWidget {
                                                   size: 29,
                                                   color: AppColors.darkBrown,
                                                 ),
-                                                itemBuilder: (_) => cubit.selectionModel!.behaviour
+                                                itemBuilder: (_) => cubit
+                                                    .selectionModel!.behaviour
                                                     .map((String val) {
                                                   return PopupMenuItem(
                                                     value: val,
@@ -582,7 +701,11 @@ class RequestScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
+                                SizedBox(
+                                  height: 40,
+                                ),
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     SizedBox(
                                       width: 429.65,
@@ -590,7 +713,7 @@ class RequestScreen extends StatelessWidget {
                                       child: PhysicalModel(
                                         borderRadius: BorderRadius.circular(41),
                                         color: Colors.white,
-                                        elevation: 12,
+                                        elevation: 5,
                                         shadowColor: Colors.black,
                                         clipBehavior: Clip.antiAlias,
                                         child: Padding(
@@ -611,7 +734,8 @@ class RequestScreen extends StatelessWidget {
                                                 onSelected:
                                                     (String selectedValue) {
                                                   AppCubit.get(context)
-                                                      .selectHouseTraind(selectedValue);
+                                                      .selectHouseTraind(
+                                                          selectedValue);
                                                   // setState(() {
                                                   //   if (selectedValue == FilterOptions.favorites) {
                                                   //     _showOnlyFavorites = true;
@@ -625,7 +749,8 @@ class RequestScreen extends StatelessWidget {
                                                   size: 29,
                                                   color: AppColors.darkBrown,
                                                 ),
-                                                itemBuilder: (_) => cubit.selectionModel!.goodWith
+                                                itemBuilder: (_) => cubit
+                                                    .selectionModel!.goodWith
                                                     .map((String val) {
                                                   return PopupMenuItem(
                                                     value: val,
@@ -649,7 +774,7 @@ class RequestScreen extends StatelessWidget {
                                       child: PhysicalModel(
                                         borderRadius: BorderRadius.circular(41),
                                         color: Colors.white,
-                                        elevation: 12,
+                                        elevation: 5,
                                         shadowColor: Colors.black,
                                         clipBehavior: Clip.antiAlias,
                                         child: Padding(
@@ -670,7 +795,8 @@ class RequestScreen extends StatelessWidget {
                                                 onSelected:
                                                     (String selectedValue) {
                                                   AppCubit.get(context)
-                                                      .selectColor(selectedValue);
+                                                      .selectColor(
+                                                          selectedValue);
                                                   // setState(() {
                                                   //   if (selectedValue == FilterOptions.favorites) {
                                                   //     _showOnlyFavorites = true;
@@ -684,7 +810,8 @@ class RequestScreen extends StatelessWidget {
                                                   size: 29,
                                                   color: AppColors.darkBrown,
                                                 ),
-                                                itemBuilder: (_) => cubit.selectionModel!.colors
+                                                itemBuilder: (_) => cubit
+                                                    .selectionModel!.colors
                                                     .map((String val) {
                                                   return PopupMenuItem(
                                                     value: val,
@@ -701,7 +828,6 @@ class RequestScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-
                               ],
                             ),
                           ),
@@ -720,59 +846,55 @@ class RequestScreen extends StatelessWidget {
   }
 
   Widget selection(context, String label, List<String> list) => SizedBox(
-    width: 429.65,
-    height: 115.53,
-    child: PhysicalModel(
-      borderRadius: BorderRadius.circular(41),
-      color: Colors.white,
-      elevation: 12,
-      shadowColor: Colors.black,
-      clipBehavior: Clip.antiAlias,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: 25.0),
-        child: Row(
-          children: [
-            Text(
-              label,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: AppColors.darkBrown,
-              ),
-            ),
-            const Spacer(),
-            PopupMenuButton(
-              onSelected:
-                  (String selectedValue) {
-                AppCubit.get(context)
-                    .selectColor(selectedValue);
-                // setState(() {
-                //   if (selectedValue == FilterOptions.favorites) {
-                //     _showOnlyFavorites = true;
-                //   } else {
-                //     _showOnlyFavorites = false;
-                //   }
-                // });
-              },
-              icon: const Icon(
-                Icons.keyboard_arrow_down,
-                size: 29,
-                color: AppColors.darkBrown,
-              ),
-              itemBuilder: (_) => list
-                  .map((String val) {
-                return PopupMenuItem(
-                  value: val,
-                  child: Text(
-                    val,
+        width: 429.65,
+        height: 115.53,
+        child: PhysicalModel(
+          borderRadius: BorderRadius.circular(41),
+          color: Colors.white,
+          elevation: 5,
+          shadowColor: Colors.black,
+          clipBehavior: Clip.antiAlias,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Row(
+              children: [
+                Text(
+                  label,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.darkBrown,
                   ),
-                );
-              }).toList(),
+                ),
+                const Spacer(),
+                PopupMenuButton(
+                  onSelected: (String selectedValue) {
+                    AppCubit.get(context).selectColor(selectedValue);
+                    // setState(() {
+                    //   if (selectedValue == FilterOptions.favorites) {
+                    //     _showOnlyFavorites = true;
+                    //   } else {
+                    //     _showOnlyFavorites = false;
+                    //   }
+                    // });
+                  },
+                  icon: const Icon(
+                    Icons.keyboard_arrow_down,
+                    size: 29,
+                    color: AppColors.darkBrown,
+                  ),
+                  itemBuilder: (_) => list.map((String val) {
+                    return PopupMenuItem(
+                      value: val,
+                      child: Text(
+                        val,
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
-      ),
-    ),
-  );
+      );
 }
