@@ -7,7 +7,7 @@ import 'package:petology/network/remote/dio_helper.dart';
 import 'package:petology/network/remote/end_points.dart';
 import 'package:petology/screens/adaption_2_screen.dart';
 import 'package:petology/screens/login_screen.dart';
-import 'package:petology/screens/reqyest_screen.dart';
+import 'package:petology/screens/request_screen.dart';
 import 'package:petology/screens/signup_screen.dart';
 import 'package:petology/shared/block_observer.dart';
 
