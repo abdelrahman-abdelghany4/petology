@@ -8,6 +8,7 @@ import 'package:petology/network/remote/end_points.dart';
 import 'package:petology/screens/about_us.dart';
 import 'package:petology/screens/adaption_2_screen.dart';
 import 'package:petology/screens/adaption_3.dart';
+import 'package:petology/screens/adaption_screen.dart';
 import 'package:petology/screens/help_screen.dart';
 import 'package:petology/screens/login_screen.dart';
 import 'package:petology/screens/signup_screen.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => AppCubit()..getPets()..getSelection()),
+        BlocProvider(create: (context) => AppCubit()..getPets()..getSelection()..getFeed()),
       ],
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            home: AboutUsScreen(),
+            home: HelpScreen(),
             debugShowCheckedModeBanner: false,
           );
         },

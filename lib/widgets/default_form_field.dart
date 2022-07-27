@@ -58,7 +58,7 @@ class defaultFormFIeld extends StatelessWidget {
             ),
           )
               : null,
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(41.0)),
+          border: InputBorder.none,
         ),
       ),
     );
