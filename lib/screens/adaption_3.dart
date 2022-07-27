@@ -26,7 +26,7 @@ class Adaption3Screen extends StatelessWidget {
                   itemBuilder: (context, index) => buildCatItem(),
                   separatorBuilder: (context, index) => const SizedBox(width: 20,),
                   itemCount:3,
-                  ),
+                  ),/////
                 ],
               ),
               const Footer(),
