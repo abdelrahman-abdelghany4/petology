@@ -2,10 +2,11 @@ class PetsModel {
   List<Pets>? pets;
 
   PetsModel.fromJson(List<dynamic> pets) {
-    pets.forEach((element)
-    {
-      this.pets!.add(Pets.fromJson(element));
-    });
+    this.pets = pets
+        .map(
+          (p) => Pets.fromJson(p),
+        )
+        .toList();
   }
 }
 

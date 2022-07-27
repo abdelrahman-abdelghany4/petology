@@ -50,9 +50,6 @@ class defaultFormFIeld extends StatelessWidget {
         decoration: InputDecoration(
           labelText: label,
           labelStyle: const TextStyle(fontSize: 17),
-          // prefixIcon: Icon(
-          //   prefix,
-          // ),
           suffixIcon: suffix != null
               ? IconButton(
             onPressed: suffixPressed,
