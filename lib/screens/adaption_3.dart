@@ -74,7 +74,7 @@ class Adaption3Screen extends StatelessWidget {
               height: 109,
               shape:  RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(80.0)),
-
+//ss
               ),
               child:   Text(
                 'Read More',
