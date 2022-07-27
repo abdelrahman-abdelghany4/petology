@@ -190,7 +190,7 @@ class AboutUsScreen extends StatelessWidget {
                   Container(
                     height: 1078,
                     width: double.infinity,
-                    color: Color(0xFFF1F1F1),
+                    color: const Color(0xFFF1F1F1),
                     child: Padding(
                       padding: const EdgeInsets.only(top: 143),
                       child: Column(
@@ -341,7 +341,7 @@ class AboutUsScreen extends StatelessWidget {
                                 onPressed: () {},
                                 minWidth: 355,
                                 height: 109,
-                                child: Text(
+                                child:  Text(
                                   'Read More',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
