@@ -6,6 +6,7 @@ import 'package:petology/network/local/cache_helper.dart';
 import 'package:petology/network/remote/dio_helper.dart';
 import 'package:petology/network/remote/end_points.dart';
 import 'package:petology/screens/adaption_2_screen.dart';
+import 'package:petology/screens/adaption_3.dart';
 import 'package:petology/screens/help_screen.dart';
 import 'package:petology/screens/login_screen.dart';
 import 'package:petology/screens/signup_screen.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            home: HelpScreen(),
+            home: Adaption3Screen(),
             debugShowCheckedModeBanner: false,
           );
         },
