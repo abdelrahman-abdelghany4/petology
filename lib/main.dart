@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:petology/cubits/app_cubit/app_cubit.dart';
+import 'package:petology/cubits/app_cubit/app_states.dart';
 import 'package:petology/network/local/cache_helper.dart';
 import 'package:petology/network/remote/dio_helper.dart';
+import 'package:petology/network/remote/end_points.dart';
 import 'package:petology/screens/login_screen.dart';
 import 'package:petology/screens/signup_screen.dart';
 import 'package:petology/shared/block_observer.dart';
@@ -11,7 +14,7 @@ void main() async {
   DioHelper.init();
   await CacheHelper.init();
 
-  String token = CacheHelper.getData(key: 'token') ?? '';
+   token = CacheHelper.getData(key: 'token') ?? '';
 
   BlocOverrides.runZoned(
     () {
@@ -28,13 +31,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Petology',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => AppCubit()..getPets()),
+      ],
+      child: BlocConsumer<AppCubit, AppStates>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          return MaterialApp(
+            title: 'Petology',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            home: SignupScreen(),
+            debugShowCheckedModeBanner: false,
+          );
+        },
       ),
-      home: SignupScreen(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
