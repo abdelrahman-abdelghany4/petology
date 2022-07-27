@@ -79,6 +79,9 @@ class RequestScreen extends StatelessWidget {
                                   ),
                                 ),
                                 DropdownButtonFormField(
+                                  decoration: InputDecoration(
+                                    helperText: 'fdfdfdf',
+                                  ),
                                   value: selectedCategory,
                                   hint: Text(
                                     'choose category',

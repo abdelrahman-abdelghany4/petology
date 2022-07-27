@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:petology/screens/request_screen.dart';
+import 'package:petology/shared/components.dart';
 import 'package:petology/themes/colors.dart';
 import 'package:petology/widgets/footer.dart';
 import 'package:petology/widgets/navigation_bar.dart';
@@ -59,7 +61,9 @@ class AboutUsScreen extends StatelessWidget {
                                         height: 49,
                                       ),
                                       MaterialButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          navigateTo(context: context, widget: RequestScreen());
+                                        },
                                         height: 105,
                                         minWidth: 537,
                                         color: Colors.white,

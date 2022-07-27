@@ -5,6 +5,7 @@ import 'package:petology/cubits/app_cubit/app_states.dart';
 import 'package:petology/network/local/cache_helper.dart';
 import 'package:petology/network/remote/dio_helper.dart';
 import 'package:petology/network/remote/end_points.dart';
+import 'package:petology/screens/about_us.dart';
 import 'package:petology/screens/adaption_2_screen.dart';
 import 'package:petology/screens/adaption_3.dart';
 import 'package:petology/screens/help_screen.dart';
@@ -17,7 +18,7 @@ void main() async {
   DioHelper.init();
   await CacheHelper.init();
 
-   token = CacheHelper.getData(key: 'token') ?? '';
+  token = CacheHelper.getData(key: 'token') ?? '';
 
   BlocOverrides.runZoned(
     () {
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => AppCubit()..getPets()),
+        BlocProvider(create: (context) => AppCubit()..getPets()..getSelection()),
       ],
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            home: Adaption3Screen(),
+            home: AboutUsScreen(),
             debugShowCheckedModeBanner: false,
           );
         },
